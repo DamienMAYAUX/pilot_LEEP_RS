@@ -1,0 +1,57 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Instructions (1/2)
+{% endblock %}
+
+{% block content %}
+
+<p>You will be participating in a virtual shopping game in which you are to choose among different product. 
+The currency unit used in the game is the ECU (Experimental Currency Unit).</p>
+
+<p>At each round, you will have to choose one of the products on the screen. 
+There will be {{ Constants.num_choice_rounds}} rounds in total, with a different set of {{ Constants.num_products }} products at each round. 
+You will not obtain any real product nor will you spend your real money because of your choice in the experiment. 
+
+<p> However, depending on the attributes of the products that you choose, you can improve how much you will get paid at the end of the experiment. 
+Each product has three attributes that will determine your payoff: label, nutrition level and price.</p>
+<ul>
+	<li> 
+	There are 5 differents labels (square, circle, triangle, star, cross) and 5 different nutrition levels (A, B, C, D and E). 
+	Each label and nutrition level has a certain value in ECU, written on the top of the screen.
+	</li>
+	<li>
+	Prices are numbers with two decimals betwenn 0.80 and 4.80.
+	</li>
+</ul>
+
+Here is an example of what the screen will look like :
+<br> 
+	<img src="{% static 'screenshot_app.png' %}"/>
+<br>
+
+<p>The amount in ECU that you get from choosing a certain product is equal to the value of the label plus that of the nutrition content minus the price. 
+The formula appears at the top of the screen.</p>
+<p> The values of the labels and nutrition content given above are the one that will be used in the experiment. 
+They will not change from one round to another and will be constantly displayed at the top of your screen as above. 
+Your total payoff is the sum of the payoff for all the products that you have bought during the experiment.</p>
+<p>
+
+<p> Consider the case depicted above.  </p>
+<ul>
+	<li> The first product has a square label (worth 5 ECU), a nutritional level E (worth 1 ECU) and a price 3.78 ECU <br> will make you earn 5 + 1 – 3.78 = 2.22 ECU if you buy it.</li>
+	<li> The second product has a cross label (worth 1 ECU), a nutritional level A (worth 5 ECU) and a price 3.93 ECU <br> will make you earn 1 + 5 – 3.93 = 2.07 ECU if you buy it.</li>
+	<li> The third product has a circle label (worth 4 ECU), a nutritional level D (worth 2 ECU) and a price 1.28 ECU <br> will make you earn 4 + 2 – 1.28 = 4.72 ECU if you buy it.</li>
+</ul>
+
+	{% formfields %}
+
+<p> You are supposed to choose one product out of {{ Constants.num_products }} at each round, in less than one minute. 
+As soon as you have chosen your product, the software will move to the next round with a new set of {{ Constants.num_products }} products. 
+If you do not choose your product in less than one minute, you will loose 1 ECU and the software will move automatically to the next round with a new set of ten products. 
+Please do your best to avoid that this situation happen, it is not in your interest and it will affect negatively the results of the experiment.</p>
+
+	{% next_button %}
+	
+{% endblock %}
