@@ -1,0 +1,64 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Instructions (2/2)
+{% endblock %}
+
+{% block content %}
+
+{% if information_quality > 0 %} 
+<p> 
+A chaque tour, vous allez recevoir une recommmandation de l'application sur le produit à choisir, comme sur l'exemple ci-dessous. 
+Vous pouvez décider librement de suivre ou de ne pas suivre cette recommandation. </p>
+
+<br> 
+	<img src="{% static 'screenshot_app2.png' %}"/>
+<br>
+
+Vous ne savez pas exactmeent comment cette recommandation est déterminée, mais vous disposez des informations suivantes :
+<ul>
+	<li> l'application calcule un score pour chaque produit en fonction de ses caractéristiques 
+	et recommmande toujours celui dont le score est le plus élevé </li>
+	<li> la façon dont le score est calculé pour la recommandation ne change pas durant toute l'expérience </li>
+	<li> le mode de calcul du score peut n'a aucune raison de correspondre à la façon dont votre gain est calculé </li>
+</ul>
+
+<p> Voici un exemple de façon dont la recommandation pourrait être déterminée. 
+Le score utilisé pour déterminer la recommandation pourrait suivre la même formule que pour votre gain, mais avec des valeurs différentes pour les labels. 
+Imaginons que, dans le calcul du score, le label cercle vaille 3 point et le label triangle 4 points, avec les mêmes valeurs pour les autres labels.
+<ol>
+	<li> Les seuls produits pour lesquels le score ne correspond pas au gain réel sont ceux avec un cercle ou une croix </li> 
+	<li> Sur l'exemple, seule la valeur du troisième produit est modifiée. </li>
+	<li> Par chance, la recommmandation correspond bien ici au choix optimal pour vous  <\li>
+</ol>
+Avec ce mode de calcul, les recommandations auront tendance à surévaluer les produits avec un label triangle et sous-évaluer ceux avec un label cercle. 
+Par conséquent, le produit recommandé peut parfois être le meilleur pour vous et parfois non.
+
+<p> Une autre possibilité pour calculer le score serait d'utiliser les mêmes valeurs que vous pour les qualités nutritionnelles et les labels,
+ mais de compter le prix positivement dans la formule de calcul du score. Cela pourrait correspondre au conseil d'un épicier qui connaitrait vos préférences mais qui serait bien content que vous payiez plus. 
+Dans cette situation, il est clair que la recommandaiton sera fortement biaisée en faveur des produits les chers et qu'il vous sera en général dommageable de la suivre.</p>
+
+<p> Ces deux exemples ont juste vocation à illustrer le principe de la recommandation 
+mais ne correspondent pas à la façon dont elle sera calculée quand vous lancerez l'expérience.
+Merci de répondre aux questions ci-dessous afin de vous assurer que vous avez bien compris le fonctionnement de la recommandation.</p>
+
+{% formfields %}
+
+{% endif %} 
+
+<p> A la fin de l'expérience, nous allons calculer la somme de vos gains en ECU à chaque étape. 
+Ce total sera converti en euros selon le taux: 10 ECU = 1€. 
+En plus de cela, vous obtiendrez un dédommagement pour votre participation d'un montant de 10€. 
+Vous recevrez ce montant par Lydia à la fin de l'expérience.</p>
+
+<p> 
+Merci de ne pas échanger avec d'autres participants, de faire vos choix de manière autonome et sans utiliser de matériel. 
+Sans cela, les résultats de l'expérience risquent d'être inexploitables. 
+</p>
+
+Merci de votre participation.
+
+{% next_button %}
+
+{% endblock %}

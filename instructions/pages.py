@@ -3,12 +3,11 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 
-class Presentation(Page):
+class Presentation_FR(Page):
     form_model = 'player'
     form_fields = ['name', 'age', 'gender']
 
-class Instructions1(Page):
-    
+class Instructions1_FR(Page):
     form_model = 'player'
     form_fields = ['answerQ1', 'answerQ2']
     
@@ -23,7 +22,7 @@ class Instructions1(Page):
             return "It is below 1 ECU for the fifth product and negative for the last one. Thus, the best option is 4.72 ECU with the third product"
         
 
-class Instructions2(Page):
+class Instructions2_FR(Page):
     
     form_model = 'player'
     
@@ -54,5 +53,5 @@ class Instructions2(Page):
 
 
 
-page_sequence = [Presentation, Instructions1, Instructions2]
+page_sequence = [Presentation_FR, Instructions1_FR, Instructions2_FR]
 #, InstructionsQuizz, ChoiceRound, Results]

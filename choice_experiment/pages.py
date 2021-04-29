@@ -4,7 +4,7 @@ from .models import Constants
 
 import csv
 
-class ChoiceRound(Page):
+class ChoiceRound_FR(Page):
     
     form_model = 'player'
     form_fields = ['choice']
@@ -29,7 +29,7 @@ class ChoiceRound(Page):
     def vars_for_template(self):        
         
         player = self.player
-        with open('pilot_LEEP_RS/trial_set.csv', newline='') as csvfile:
+        with open('trial_set.csv', newline='') as csvfile:
             csv_reader = csv.DictReader(csvfile, delimiter=',', )
             key_list, value_list = [], []
                        
@@ -61,7 +61,7 @@ class ChoiceRound(Page):
         
         # Determine the payoff of the player
         # IS IT POSSIBLE TO CALL VARS_FOR_TEMPLATE FROM HERE ?
-        with open('pilot_LEEP_RS/trial_set.csv', newline='') as csvfile:
+        with open('trial_set.csv', newline='') as csvfile:
             csv_reader = csv.DictReader(csvfile, delimiter=',')
             for row in csv_reader:
                 if row['round'] == str(trial_number) and row['order'] == str(player.choice):
@@ -72,7 +72,8 @@ class ChoiceRound(Page):
         timeout_happened = self.timeout_happened
         if timeout_happened:
             player.timeout_reached = True
+            
           
 
-page_sequence = [ChoiceRound]
+page_sequence = [ChoiceRound_FR]
 #, InstructionsQuizz, ChoiceRound, Results]

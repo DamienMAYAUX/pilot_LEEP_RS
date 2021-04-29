@@ -1,0 +1,63 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Instructions (1/2)
+{% endblock %}
+
+{% block content %}
+
+<p>Vous allez participer à une expérience virtuelle d'achat en ligne, dans laquelle vous devez faire des choix entre différents produits. 
+La monnaie utilisée dans l'expérience a pour unité l'ECU (Experimental Currency Unit).</p>
+
+<p>A chaque étape de l'expérience, vous allez devoir choisir l'un des produits apparaissant à l'écran. 
+Il y aura {{ Constants.num_choice_rounds}} étapes au total, et l'ensemble des {{ Constants.num_products }} produits disponibles change d'une étape à l'autre. 
+Bien entendu, les produits mentionnés n'existent pas réellement, 
+vous n'obtiendrez pas d'objet physique correspondant aux produits que vous avez choisis
+ et le choix d'un produit ne vous fait pas dépenser d'argent réel.
+
+<p> Cependant, selon les caractéristiques des produits que vous achetez, vous serez plus ou moins payés à la fin de l'expérience.  
+Chaque produit a trois caractéristiques : sa qualité nutritionnelle, son label et son prix.</p>
+<ul>
+	<li> 
+	Il y a 5 labels différents différents (carré, cercle, triangle, étoile et croix) et cinq qualités nutritionnelles différentes (A, B, C, D et E). 
+	Chaque label ou qualité nutritionnelle a une valeur en ECU qui vous sera rappelée en haut de votre écran et qui ne changera pas de toute l'expérience.
+	</li>
+	<li>
+	Les prix sont des nombres avec deux décimales compris entre 0.80 ECU et 4.80 ECU.
+	</li>
+</ul>
+
+Voici un exemple du type d'écran que vous allez voir :
+<br> 
+	<img src="{% static 'screenshot_app.png' %}"/>
+<br>
+
+<p>Le montant en ECU que vous obtiendrez en choissant un produit est égal à la valeur de son label, plus celle de son contenu nutritionnel, moins son prix.
+Cette formule vous est rappelée en haut de l'écran durant toute l'expérience. </p>
+<p> Les valeurs des labels et des qualités nutritionnelles sur cet exemples sont aussi celles qui seront utilisées pour votre expérience.
+Votre gain total est la somme des gains de chaque tour de jeu. </p>
+<p>
+
+<p> Essayons détemriner les gains exacts obtenus en choissant un produit dans l'exemple précédent.  </p>
+<ul>
+	<li> La premier produit, avec le label carré (qui vaut 5 ECU), une qualité nutritionnelle E (qui vaut 1 ECU) et un prix de 3.78 ECU 
+	<br> vous fera gagner 5 + 1 – 3.78 = 2.22 ECU si vous le choisissez.</li>
+	<li> Le second produit, avec le label croix (qui vaut 1 ECU), une qualité nutritionnelle A (qui vaut 5 ECU) et un prix de 3.93 ECU 
+	<br> vous fera gagner 1 + 5 – 3.93 = 2.07 ECU si vous le choisissez.</li>
+	<li> Le troisième produit, avec le label cercle (qui vaut 4 ECU), une qualité nutritionnelle D (qui vaut 2 ECU) et un prix de 1.28 ECU 
+	<br> vous fera gagner 4 + 2 – 1.28 = 4.72 ECU si vous le choisissez.</li>
+</ul>
+
+	{% formfields %}
+
+<p> Vous êtes censés choisir un produit parmi les {{ Constants.num_products }} à chaque tour en moins d'une minute. 
+Un compteur apparaissant à l'écran vous indique le temps restant pour réaliser votre choix. 
+Dès que vous aurez cliqué sur le bouton d'achat, l'expérience passera au tour suivant avec un nouvel ensemble de {{ Constants.num_products }} produits. 
+Si vous ne choisissez pas votre produit en moins d'une minute, vous perdrez 1 ECU sur votre gain total 
+et l'expérence passera automatiquement au tour suivant avec un nouvel ensemble de {{ Constants.num_products }} produits. 
+S'il vous plait, faites votre possible pour que cette situaiton ne se produise pas, ce n'est ni dans votre intérêt ni dans celui de l'expérience.</p>
+
+	{% next_button %}
+	
+{% endblock %}
