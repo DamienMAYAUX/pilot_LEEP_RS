@@ -12,9 +12,10 @@ La monnaie utilisée dans l'expérience a pour unité l'ECU (Experimental Curren
 
 <p>A chaque étape de l'expérience, vous allez devoir choisir l'un des produits apparaissant à l'écran. 
 Il y aura {{ Constants.num_choice_rounds}} étapes au total, et l'ensemble des {{ Constants.num_products }} produits disponibles change d'une étape à l'autre. 
-Bien entendu, les produits mentionnés n'existent pas réellement, 
+
+<p> Bien entendu, les produits mentionnés n'existent pas réellement, 
 vous n'obtiendrez pas d'objet physique correspondant aux produits que vous avez choisis
- et le choix d'un produit ne vous fait pas dépenser d'argent réel.
+ et le choix d'un produit ne vous fait pas dépenser d'argent réel. </p>
 
 <p> Cependant, selon les caractéristiques des produits que vous achetez, vous serez plus ou moins payés à la fin de l'expérience.  
 Chaque produit a trois caractéristiques : sa qualité nutritionnelle, son label et son prix.</p>
@@ -30,7 +31,7 @@ Chaque produit a trois caractéristiques : sa qualité nutritionnelle, son label
 
 Voici un exemple du type d'écran que vous allez voir :
 <br> 
-	<img src="{% static 'screenshot_app.png' %}"/>
+	<img src="{% static 'screenshot_app_FR.png' %}"/>
 <br>
 
 <p>Le montant en ECU que vous obtiendrez en choissant un produit est égal à la valeur de son label, plus celle de son contenu nutritionnel, moins son prix.
@@ -51,12 +52,13 @@ Votre gain total est la somme des gains de chaque tour de jeu. </p>
 
 	{% formfields %}
 
-<p> Vous êtes censés choisir un produit parmi les {{ Constants.num_products }} à chaque tour en moins d'une minute. 
+<p> Vous êtes censés faire votre choix entre {{ Constants.num_products }} produits en moins de 40s à chaque étape. 
 Un compteur apparaissant à l'écran vous indique le temps restant pour réaliser votre choix. 
-Dès que vous aurez cliqué sur le bouton d'achat, l'expérience passera au tour suivant avec un nouvel ensemble de {{ Constants.num_products }} produits. 
-Si vous ne choisissez pas votre produit en moins d'une minute, vous perdrez 1 ECU sur votre gain total 
+Quand vous cliquez sur le bouton de choix, vous passerez sur une page d'attente sans chronomètre avant de démarrer l'étape suivante. </p>
+
+<p> Si vous ne choisissez pas votre produit en moins de 40s, vous perdrez 1 ECU sur votre gain total 
 et l'expérence passera automatiquement au tour suivant avec un nouvel ensemble de {{ Constants.num_products }} produits. 
-S'il vous plait, faites votre possible pour que cette situaiton ne se produise pas, ce n'est ni dans votre intérêt ni dans celui de l'expérience.</p>
+S'il vous plait, faites votre possible pour que cette situation ne se produise pas, ce n'est ni dans votre intérêt, ni dans celui de l'expérience.</p>
 
 	{% next_button %}
 	

@@ -29,7 +29,7 @@ class ChoiceRound_FR(Page):
     def vars_for_template(self):        
         
         player = self.player
-        with open('trial_set.csv', newline='') as csvfile:
+        with open('trial_set_FR.csv', newline='') as csvfile:
             csv_reader = csv.DictReader(csvfile, delimiter=',', )
             key_list, value_list = [], []
                        
@@ -52,7 +52,7 @@ class ChoiceRound_FR(Page):
         return variable_dict
     
     
-    timeout_seconds = 60
+    timeout_seconds = 40
     
     def before_next_page(self):
         
@@ -74,6 +74,9 @@ class ChoiceRound_FR(Page):
             player.timeout_reached = True
             
           
+class WaitPage_FR(Page):
+    pass
 
-page_sequence = [ChoiceRound_FR]
+
+page_sequence = [WaitPage_FR, ChoiceRound_FR]
 #, InstructionsQuizz, ChoiceRound, Results]

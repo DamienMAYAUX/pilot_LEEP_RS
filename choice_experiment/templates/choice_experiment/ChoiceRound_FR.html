@@ -2,7 +2,7 @@
 {% load otree static %}
 
 {% block title %}
-    Etape n°{{player.round_number}}
+    Étape n°{{player.round_number}}
 {% endblock %}
 
 {% block content %}
@@ -20,27 +20,24 @@
     <th>Recommandé ?</th>
 	{% endif %}
     <th> </th>
-  </tr>=
+  </tr>
 
   <tr>
     <td> {{label1}} </td>
     <td> {{nutrition1}} </td>
-    <td> {{price1}}€ </td>
+    <td> {{price1}} ECU </td>
 
 	{% if information_quality == 1 %} 
-		{% if perfect_rec1 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if perfect_rec1 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %} 
 	{% if information_quality == 2 %} 
-		{% if recA1 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if good_rec1 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 	{% if information_quality == 3 %} 
-		{% if recB1 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if random_rec1 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 	{% if information_quality == 4 %} 
-		{% if recC1 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
-	{% endif %}
-	{% if information_quality == 5 %} 
-		{% if recD1 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if bad_rec1 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 
     <td> <button name="choice" value=1>Choisir</button> </td>
@@ -49,22 +46,19 @@
     <tr>
     <td> {{label2}} </td>
     <td> {{nutrition2}} </td>
-    <td> {{price2}}€ </td>
+    <td> {{price2}} ECU </td>
 
 	{% if information_quality == 1 %} 
-		{% if perfect_rec2 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if perfect_rec2 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %} 
 	{% if information_quality == 2 %} 
-		{% if recA2 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if good_rec2 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 	{% if information_quality == 3 %} 
-		{% if recB2 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if random_rec2 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 	{% if information_quality == 4 %} 
-		{% if recC2 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
-	{% endif %}
-	{% if information_quality == 5 %} 
-		{% if recD2 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if bad_rec2 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 
     <td> <button name="choice" value=2>Choisir</button> </td>
@@ -73,22 +67,19 @@
     <tr>
     <td> {{label3}} </td>
     <td> {{nutrition3}} </td>
-    <td> {{price3}}€ </td>
+    <td> {{price3}} ECU </td>
 
 	{% if information_quality == 1 %} 
-		{% if perfect_rec3 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if perfect_rec3 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %} 
 	{% if information_quality == 2 %} 
-		{% if recA3 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if good_rec3 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 	{% if information_quality == 3 %} 
-		{% if recB3 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if random_rec3 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 	{% if information_quality == 4 %} 
-		{% if recC3 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
-	{% endif %}
-	{% if information_quality == 5 %} 
-		{% if recD3 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if bad_rec3 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 
     <td> <button name="choice" value=3>Choisir</button> </td>
@@ -98,22 +89,19 @@
     <tr>
     <td> {{label4}} </td>
     <td> {{nutrition4}} </td>
-    <td> {{price4}}€ </td>
+    <td> {{price4}} ECU </td>
 
 	{% if information_quality == 1 %} 
-		{% if perfect_rec4 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if perfect_rec4 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %} 
 	{% if information_quality == 2 %} 
-		{% if recA4 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if good_rec4 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 	{% if information_quality == 3 %} 
-		{% if recB4 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if random_rec4 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 	{% if information_quality == 4 %} 
-		{% if recC4 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
-	{% endif %}
-	{% if information_quality == 5 %} 
-		{% if recD4 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if bad_rec4 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 
     <td> <button name="choice" value=4>Choisir</button> </td>
@@ -123,22 +111,19 @@
     <tr>
     <td> {{label5}} </td>
     <td> {{nutrition5}} </td>
-    <td> {{price5}}€ </td>
+    <td> {{price5}} ECU </td>
 
 	{% if information_quality == 1 %} 
-		{% if perfect_rec5 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if perfect_rec5 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %} 
 	{% if information_quality == 2 %} 
-		{% if recA5 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if good_rec5 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 	{% if information_quality == 3 %} 
-		{% if recB5 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if random_rec5 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 	{% if information_quality == 4 %} 
-		{% if recC5 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
-	{% endif %}
-	{% if information_quality == 5 %} 
-		{% if recD5 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if bad_rec5 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 
     <td> <button name="choice" value=5>Choisir</button> </td>
@@ -147,22 +132,19 @@
     <tr>
     <td> {{label6}} </td>
     <td> {{nutrition6}} </td>
-    <td> {{price6}}€ </td>
+    <td> {{price6}} ECU </td>
 
 	{% if information_quality == 1 %} 
-		{% if perfect_rec6 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if perfect_rec6 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %} 
 	{% if information_quality == 2 %} 
-		{% if recA6 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if good_rec6 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 	{% if information_quality == 3 %} 
-		{% if recB6 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if random_rec6 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 	{% if information_quality == 4 %} 
-		{% if recC6 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
-	{% endif %}
-	{% if information_quality == 5 %} 
-		{% if recD6 %} <td> RECOMMENDÉ </td> {% else %} <td> </td> {% endif %} 
+		{% if bad_rec6 %} <td> RECOMMANDÉ </td> {% else %} <td> </td> {% endif %} 
 	{% endif %}
 
     <td> <button name="choice" value=6>Choisir</button> </td>

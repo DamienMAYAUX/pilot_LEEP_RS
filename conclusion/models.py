@@ -13,7 +13,6 @@ from otree.api import (
 author = 'Damien Mayaux'
 
 doc = """
-This short break in the middle of the game allows me to test the particpant's attention'
 """
 
 
@@ -31,4 +30,10 @@ class Group(BaseGroup):
     pass
 
 class Player(BasePlayer):
-    feedback = models.LongStringField(label = "Feel free to leave us a feedback on the experiment ")
+    # feedback = models.LongStringField(label = "Feel free to leave us a feedback on the experiment ")
+    feedback = models.LongStringField( label = """N'hésitez pas à donner ci-dessous votre ressenti\
+                                      sur l'expérience,\n à expliquer comment vous avez procédé ou à\
+                                          partager vos intuitions\n sur la pertinence de la recommandation.""")
+        
+        
+        
