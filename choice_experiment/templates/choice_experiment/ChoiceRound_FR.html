@@ -152,4 +152,18 @@
 
  </table>
 
+
+<p id="timer_alert" style="color:red;"></p>
+
+<script>
+    $(function () {
+        $('.otree-timer__time-left').on('update.countdown', function (event) {
+            if (event.offset.totalSeconds === 10) {
+                document.getElementById("timer_alert").innerHTML = "Attention, il vous reste moins de 10 secondes pour faire votre choix !";
+            }
+        });
+    });
+</script>
+
+
 {% endblock %}

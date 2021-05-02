@@ -29,6 +29,15 @@ Chaque produit a trois caractéristiques : sa qualité nutritionnelle, son label
 	</li>
 </ul>
 
+<p> Vous êtes censés faire votre choix entre {{ Constants.num_products }} produits en moins de 40s à chaque étape. 
+Un compteur apparaissant à l'écran vous indique le temps restant pour réaliser votre choix. 
+Quand vous cliquez sur le bouton de choix, vous passerez sur une page d'attente sans chronomètre avant de démarrer l'étape suivante. </p>
+
+<p> Si vous ne choisissez pas votre produit en moins de 40s, vous perdrez 1 ECU sur votre gain total 
+et l'expérence passera automatiquement au tour suivant avec un nouvel ensemble de {{ Constants.num_products }} produits. 
+S'il vous plait, faites votre possible pour que cette situation ne se produise pas, ce n'est ni dans votre intérêt, ni dans celui de l'expérience.</p>
+
+
 Voici un exemple du type d'écran que vous allez voir :
 <br> 
 	<img src="{% static 'screenshot_app_FR.png' %}"/>
@@ -36,7 +45,7 @@ Voici un exemple du type d'écran que vous allez voir :
 
 <p>Le montant en ECU que vous obtiendrez en choissant un produit est égal à la valeur de son label, plus celle de son contenu nutritionnel, moins son prix.
 Cette formule vous est rappelée en haut de l'écran durant toute l'expérience. </p>
-<p> Les valeurs des labels et des qualités nutritionnelles sur cet exemples sont aussi celles qui seront utilisées pour votre expérience.
+<p> Les valeurs des labels et des qualités nutritionnelles affichées en haut de l'écran ne changent pas durant l'expérience et sont les mêmes que sur l'exemple ci-dessus.
 Votre gain total est la somme des gains de chaque tour de jeu. </p>
 <p>
 
@@ -50,15 +59,11 @@ Votre gain total est la somme des gains de chaque tour de jeu. </p>
 	<br> vous fera gagner 4 + 2 – 1.28 = 4.72 ECU si vous le choisissez.</li>
 </ul>
 
+<p> Voici un petit questionnaire pour vérifier que vous avez compris le principe de l'expérience. 
+Vos réponses à ce questionnaire ne comptent pas pour l'expérience et n'affectent pas le montant que vous recevrez à la fin. 
+Si vous faites une erreur, la page affichera un message d'erreur et un corrigé s'affichera. Il vous faudra saisir à nouveau la bonne réponse. </p>
+
 	{% formfields %}
-
-<p> Vous êtes censés faire votre choix entre {{ Constants.num_products }} produits en moins de 40s à chaque étape. 
-Un compteur apparaissant à l'écran vous indique le temps restant pour réaliser votre choix. 
-Quand vous cliquez sur le bouton de choix, vous passerez sur une page d'attente sans chronomètre avant de démarrer l'étape suivante. </p>
-
-<p> Si vous ne choisissez pas votre produit en moins de 40s, vous perdrez 1 ECU sur votre gain total 
-et l'expérence passera automatiquement au tour suivant avec un nouvel ensemble de {{ Constants.num_products }} produits. 
-S'il vous plait, faites votre possible pour que cette situation ne se produise pas, ce n'est ni dans votre intérêt, ni dans celui de l'expérience.</p>
 
 	{% next_button %}
 	

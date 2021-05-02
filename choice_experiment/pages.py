@@ -61,17 +61,19 @@ class ChoiceRound_FR(Page):
         
         # Determine the payoff of the player
         # IS IT POSSIBLE TO CALL VARS_FOR_TEMPLATE FROM HERE ?
-        with open('trial_set.csv', newline='') as csvfile:
+        with open('trial_set_FR.csv', newline='') as csvfile:
             csv_reader = csv.DictReader(csvfile, delimiter=',')
             for row in csv_reader:
                 if row['round'] == str(trial_number) and row['order'] == str(player.choice):
-                    player.payoff = 100*float(row['total_points'])
+                    player.participant.payoff = player.participant.payoff + 100*float(row['total_points'])
+                    break 
         
         # Check if the player has chosen a product or if the application has moved automatically to the next page
         # Store the answer in the player-specific boolean field 'did_not_play'
         timeout_happened = self.timeout_happened
         if timeout_happened:
             player.timeout_reached = True
+            player.participant.payoff = player.participant.payoff - 100
             
           
 class WaitPage_FR(Page):

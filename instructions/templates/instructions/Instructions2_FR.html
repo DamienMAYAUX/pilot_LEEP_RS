@@ -16,13 +16,22 @@ Vous pouvez décider librement de suivre ou de ne pas suivre cette recommandatio
 	<img src="{% static 'screenshot_app2_FR.png' %}"/>
 <br>
 
-Vous ne savez pas exactmeent comment cette recommandation est déterminée, mais vous disposez des informations suivantes :
+Vous ne savez pas exactement comment cette recommandation est déterminée, mais vous disposez des informations suivantes :
 <ul>
 	<li> l'application calcule un score pour chaque produit en fonction de ses caractéristiques 
 	et recommmande toujours celui dont le score est le plus élevé </li>
 	<li> la façon dont le score est calculé pour la recommandation ne change pas durant toute l'expérience </li>
 	<li> le mode de calcul du score peut n'a aucune raison de correspondre à la façon dont votre gain est calculé </li>
 </ul>
+
+<p> Il est important de comprendre que le "score" utilisé pour calculer la recommandation n'est pas la même chose que le "gain" dont la page précédente vous a expliqué le calcul. 
+<ul>
+	<li> Le gain correspond aux ECU que vous allez obtenir et qui seront convertis en euros à la fin de l'expérience. 
+	La formule pour calculer le gain est rappelée à l'écran durant toute l'expérience. </li> 
+	<li> Le score est un quantité calculée par l'algorithme. Le produit recommandé est celui qui a le score le plus important. 
+	Vous n'avez aucune idée de la formule utilisée pour calculer le score, mais vous savez qu'elle reste la même durant toute l'expérience. </li>
+</ul>
+</p>
 
 <p> <strong> Exemple 1 </strong>. Le score utilisé pour déterminer la recommandation pourrait suivre la même formule que pour votre gain, mais avec des valeurs différentes pour les labels. 
 Imaginons que, dans le calcul du score, le label cercle vaille 3 point et le label triangle 4 points, avec les mêmes valeurs pour les autres labels.
@@ -40,8 +49,12 @@ Par conséquent, le produit recommandé peut parfois être le meilleur pour vous
 Dans cette situation, il est clair que la recommandaiton sera fortement biaisée en faveur des produits les chers et qu'il vous sera en général dommageable de la suivre.</p>
 
 <p> Ces deux exemples ont juste vocation à illustrer le principe de la recommandation 
-mais ne correspondent pas à la façon dont elle sera calculée quand vous lancerez l'expérience.
-Merci de répondre aux questions ci-dessous afin de vous assurer que vous avez bien compris le fonctionnement de la recommandation.</p>
+mais ne correspondent pas à la façon dont elle sera calculée quand vous lancerez l'expérience.</p>
+
+
+<p> Voici un petit questionnaire pour vérifier que vous avez compris le principe de la recommandation. 
+Vos réponses à ce questionnaire ne comptent pas pour l'expérience et n'affectent pas le montant que vous recevrez à la fin. 
+Si vous faites une erreur, la page affichera un message d'erreur et un corrigé s'affichera. Il vous faudra saisir à nouveau la bonne réponse. </p>
 
 {% formfields %}
 

@@ -12,7 +12,7 @@ nutrition_list = c("A", "B", "C", "D", "E")
 
 set.seed(42)
 
-nb_products = 60
+nb_products = 200
 
 product_list = data.frame(
   price = sample(price_list, nb_products, replace = TRUE),
