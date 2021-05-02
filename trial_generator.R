@@ -12,7 +12,7 @@ nutrition_list = c("A", "B", "C", "D", "E")
 
 set.seed(42)
 
-nb_products = 200
+nb_products = 300
 
 product_list = data.frame(
   price = sample(price_list, nb_products, replace = TRUE),
@@ -20,7 +20,7 @@ product_list = data.frame(
   nutrition = sample(nutrition_list, nb_products, replace = TRUE)
 )
 
-nb_rounds = 30
+nb_rounds = 20
 nb_products_per_round = 6
 
 round_list = 
