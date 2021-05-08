@@ -29,7 +29,7 @@ class ChoiceRound_FR(Page):
     def vars_for_template(self):        
         
         player = self.player
-        with open('trial_set_FR.csv', newline='') as csvfile:
+        with open('trial_set_FR.csv', newline='', encoding='cp1252') as csvfile:
             csv_reader = csv.DictReader(csvfile, delimiter=',', )
             key_list, value_list = [], []
                        
@@ -61,7 +61,7 @@ class ChoiceRound_FR(Page):
         
         # Determine the payoff of the player
         # IS IT POSSIBLE TO CALL VARS_FOR_TEMPLATE FROM HERE ?
-        with open('trial_set_FR.csv', newline='') as csvfile:
+        with open('trial_set_FR.csv', newline='', encoding='cp1252') as csvfile:
             csv_reader = csv.DictReader(csvfile, delimiter=',')
             for row in csv_reader:
                 if row['round'] == str(trial_number) and row['order'] == str(player.choice):

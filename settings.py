@@ -3,7 +3,7 @@ from os import environ
 SESSION_CONFIGS = [
     dict(
         name='pilot_recommandation',
-        num_demo_participants=15,
+        num_demo_participants=30,
         #app_sequence=['instructions', 'choice_experiment', 'attention_test']
         #app_sequence=['instructions', 'choice_experiment']
         app_sequence=['instructions','choice_experiment', 'conclusion'],
@@ -27,7 +27,7 @@ SESSION_CONFIGS = [
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = dict(
-    real_world_currency_per_point=0.0005, participation_fee=8.5, doc=""
+    real_world_currency_per_point=0.0015, participation_fee=5, doc=""
 )
 
 # ISO-639 code

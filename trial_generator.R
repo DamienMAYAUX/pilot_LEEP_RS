@@ -5,10 +5,15 @@ library(tidyverse)
 
 ## Les données en entrée
 
-price_list = c(80:420 / 100)
+price_list = c(80:580 / 100)
+#price_prob = c(80:420 / 100)^-4 / sum( c(80:420 / 100)^-2  ) 
+
 #label_list = c("square", "circle", "triangle", "star", "cross")
 label_list = c("carré", "cercle", "triangle", "étoile", "croix")
+#label_prob = c(0.1, 0.1, 0.3, 0.3, 0.2)
+
 nutrition_list = c("A", "B", "C", "D", "E")
+#nutrition_prob = c(0.1, 0.2, 0.3, 0.3, 0.1)
 
 set.seed(42)
 
@@ -22,6 +27,7 @@ product_list = data.frame(
 
 nb_rounds = 20
 nb_products_per_round = 6
+
 
 round_list = 
   bind_rows(
@@ -164,24 +170,22 @@ scores = round_list%>%
     bad_score = sum(bad_score),
   )
 
-if ( abs(scores$good_score - 0.8*scores$total_max_points) < 5){
+if ( abs(scores$good_score - 0.5*(scores$total_mean_points+scores$total_max_points)  ) < 5){
   good_recommendation_found = TRUE
 }
 
 
-if ( abs(scores$random_score - scores$total_mean_points) < 5){
+if ( abs(scores$random_score - scores$total_mean_points ) < 5){
   random_recommendation_found = TRUE
 }
   
 
-if ( abs(scores$bad_score - 0.5 * scores$total_mean_points) < 5){
+if ( abs(scores$bad_score - 0.75 * (scores$total_min_points+scores$total_mean_points) ) < 5){
   bad_recommendation_found = TRUE
 }
 
 
 }
-
-
 
 #write.csv(round_list, file = "D:/Users/Louise/Desktop/PSE/Thèse/LEEP_pilot/Github/Pilot_LEEP_RS/trial_set.csv")
 write.csv(round_list, file = "D:/Users/Louise/Desktop/PSE/Thèse/LEEP_pilot/Github/Pilot_LEEP_RS/trial_set_FR.csv")
