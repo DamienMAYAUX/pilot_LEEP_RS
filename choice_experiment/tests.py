@@ -3,7 +3,20 @@ from . import pages
 from ._builtin import Bot
 from .models import Constants
 
+import csv
+
 
 class PlayerBot(Bot):
     def play_round(self):
-        yield pages.ChoiceRound, dict(choice = 3)
+        
+        with open('trial_set_FR.csv', newline='', encoding='cp1252') as csvfile:
+            csv_reader = csv.DictReader(csvfile, delimiter=',')
+            for row in csv_reader:
+                if (row['round'] == str(self.round_number) and row['perfect_rec'] == "TRUE"):
+                    choice_value = row['order']
+                    break 
+        
+        #choice_value = 1
+        
+        yield pages.WaitPage_FR
+        yield pages.ChoiceRound_FR, dict(choice = choice_value)

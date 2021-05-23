@@ -8,9 +8,9 @@ from .models import Constants
 
 class PlayerBot(Bot):
     def play_round(self):
-        yield pages.Presentation, dict(name = 'Joe', age = '12', gender = 'Autre')
-        yield pages.Instructions1, dict(answerQ1 = 2.12, answerQ2 = 4.72)
+        yield pages.Presentation_FR, dict(etudes= 'Brevet des collèges, BEPC', age = '15-17 ans', genre = 'Autre')
+        yield pages.Instructions1_FR, dict(answerQ1 = 2.12, answerQ2 = 4.72)
         if self.player.participant.vars['information_quality'] > 0:
-            yield pages.Instructions2, dict(answerQ3 = False, answerQ4 = False, answerQ5 = True)
+            yield pages.Instructions2_FR, dict(answerQ3 = False, answerQ4 = False, answerQ5 = True)
         else:
-            yield Submission(pages.Instructions2, dict(answerQ3 = False, answerQ4 = False, answerQ5 = True), check_html=False)
+            yield Submission(pages.Instructions2_FR, dict(answerQ3 = False, answerQ4 = False, answerQ5 = True), check_html=False)

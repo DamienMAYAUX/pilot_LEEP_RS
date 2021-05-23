@@ -3,23 +3,14 @@ from os import environ
 SESSION_CONFIGS = [
     dict(
         name='pilot_recommandation',
-        num_demo_participants=30,
+        num_demo_participants=5,
         #app_sequence=['instructions', 'choice_experiment', 'attention_test']
         #app_sequence=['instructions', 'choice_experiment']
         app_sequence=['instructions','choice_experiment', 'conclusion'],
-        use_browser_bots=False
+        use_browser_bots = False
     ),
 ]
 
-
-#SESSION_CONFIGS = [
-    # dict(
-    #    name='public_goods',
-    #    display_name="Public Goods",
-    #    num_demo_participants=3,
-    #    app_sequence=['public_goods', 'payment_info']
-    # ),
-#]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
 # in SESSION_CONFIGS, except those that explicitly override it.
@@ -27,7 +18,7 @@ SESSION_CONFIGS = [
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = dict(
-    real_world_currency_per_point=0.0015, participation_fee=5, doc=""
+    real_world_currency_per_point=0.00066, participation_fee=6, doc=""
 )
 
 # ISO-639 code

@@ -19,7 +19,7 @@ class Constants(BaseConstants):
     name_in_url = 'instructions'
     players_per_group = None
     num_rounds = 1
-    num_choice_rounds = 20
+    num_choice_rounds = 30
     #language = "English"
     language = "French"
     num_products = 6
@@ -28,11 +28,13 @@ class Constants(BaseConstants):
 class Subsession(BaseSubsession):
     def creating_session(self):
         import itertools
-        information_level = itertools.cycle([0,1,2,3,4])
-        first_trials_order = itertools.cycle([0,1,2])
+        #information_level = itertools.cycle([0,1,2,3,4])
+        information_level = itertools.cycle([4,0,3,2,1])
+        #first_trials_order = itertools.cycle([0,1,2])
         for player in self.get_players():
             player.participant.vars['information_quality'] = next(information_level)
-            player.participant.vars['first_trials_order'] = next(first_trials_order)
+            #player.participant.vars['first_trials_order'] = next(first_trials_order)
+            player.participant.vars['first_trials_order'] = 0
 
 class Group(BaseGroup):
     pass
@@ -66,4 +68,10 @@ class Player(BasePlayer):
     answerQ3 = models.BooleanField(label = 'Y a-t-il une relation entre l\'ordre dans lequel les produits apparaissent à l\'écran et la recommandation ?')  
     answerQ4 = models.BooleanField(label = 'A la première étape, la recommandation était vraiment mauvaise. Est-ce que cela veut dire qu\'elle le sera également à toutes les étapes suivantes ?')    
     answerQ5 = models.BooleanField(label = 'Si à deux étapes différentes j\'ai le choix entre exactement les mêmes produits, est-ce que la recommandation sera deux fois la même ?')  
+    
+    correctQ1 = models.BooleanField(initial=True)
+    correctQ2 = models.BooleanField(initial=True)
+    correctQ3 = models.BooleanField(initial=True)
+    correctQ4 = models.BooleanField(initial=True)
+    correctQ5 = models.BooleanField(initial=True)
     

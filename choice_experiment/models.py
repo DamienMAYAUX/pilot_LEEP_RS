@@ -22,7 +22,7 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'choice_experiment'
     players_per_group = None
-    num_rounds = 20
+    num_rounds = 30
     num_products = 6
     seed = 13
 

@@ -4,6 +4,7 @@ from .models import Constants
 
 import csv
 
+#class ChoiceRound_FR_no_min_time(Page):
 class ChoiceRound_FR(Page):
     
     form_model = 'player'
@@ -52,7 +53,7 @@ class ChoiceRound_FR(Page):
         return variable_dict
     
     
-    timeout_seconds = 40
+    timeout_seconds = 30
     
     def before_next_page(self):
         
@@ -79,6 +80,6 @@ class ChoiceRound_FR(Page):
 class WaitPage_FR(Page):
     pass
 
-
+#page_sequence = [WaitPage_FR, ChoiceRound_FR_no_min_time]
 page_sequence = [WaitPage_FR, ChoiceRound_FR]
 #, InstructionsQuizz, ChoiceRound, Results]

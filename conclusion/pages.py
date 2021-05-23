@@ -5,9 +5,11 @@ from .models import Constants,Player
 class LastPage_FR(Page):
     form_model = 'player'
     form_fields = ['feedback']
-    self.player.participant.payoff = self.player.participant.payoff - 5000
     
     def vars_for_template(self):
+        if not self.player.minus5000done:
+            self.player.participant.payoff = max(self.player.participant.payoff - 5000,0)
+            self.player.minus5000done=True
         return {'payoff_normalized' : float(self.player.participant.payoff + 5000)/100}
 
 class RedirectPage_FR(Page):

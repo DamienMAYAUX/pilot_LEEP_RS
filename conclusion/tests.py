@@ -6,4 +6,7 @@ from .models import Constants
 
 class PlayerBot(Bot):
     def play_round(self):
-        yield pages.LastPage, dict(feedback = "a")
+        pass
+        #yield pages.LastPage, dict(feedback = "a")
+        
+        
