@@ -7,7 +7,7 @@ SESSION_CONFIGS = [
         #app_sequence=['instructions', 'choice_experiment', 'attention_test']
         #app_sequence=['instructions', 'choice_experiment']
         app_sequence=['instructions','choice_experiment', 'conclusion'],
-        use_browser_bots = False
+        use_browser_bots = True
     ),
 ]
 

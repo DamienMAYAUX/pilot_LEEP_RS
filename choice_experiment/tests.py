@@ -12,7 +12,9 @@ class PlayerBot(Bot):
         with open('trial_set_FR.csv', newline='', encoding='cp1252') as csvfile:
             csv_reader = csv.DictReader(csvfile, delimiter=',')
             for row in csv_reader:
-                if (row['round'] == str(self.round_number) and row['perfect_rec'] == "TRUE"):
+                if row['round'] == str(self.round_number) \
+                    and ( float(row['total_points']) < 0 \
+                         or row['bad_rec'] == "TRUE"):
                     choice_value = row['order']
                     break 
         
