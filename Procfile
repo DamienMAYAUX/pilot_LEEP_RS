@@ -1,0 +1,1 @@
+web: gunicorn oTree.manage:app --log-file –
